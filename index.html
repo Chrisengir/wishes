@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday wish from Sylvester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="birthday-box" onclick="revealMessage()">
+            <img src="blessing-box.png" alt="Blessing Box">
+        </div>
+        <div id="birthday-message" class="hidden">
+            <h1>Happy Birthday,!</h1>
+            <p>May this year bring you endless joy and blessings.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<button id="confettiButton">Click for Celebration!</button>
+
+<script>
+    document.getElementById('confettiButton').addEventListener('click', function () {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    });
+</script>
+<div id="messageContainer">
+    <h2 id="hiddenMessage" style="display:none;">Happy Birthday wish from Sylvester!</h2>
+</div>
+
+<script>
+    document.getElementById('messageContainer').addEventListener('click', function () {
+        document.getElementById('hiddenMessage').style.display = 'block';
+    });
+</script>
+
